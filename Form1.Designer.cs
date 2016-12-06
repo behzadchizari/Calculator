@@ -58,7 +58,7 @@
             this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResult.Enabled = false;
             this.txtResult.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.Location = new System.Drawing.Point(12, 8);
+            this.txtResult.Location = new System.Drawing.Point(12, 42);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(422, 70);
@@ -363,6 +363,7 @@
             this.button3.Text = "C";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.BindingContextChanged += new System.EventHandler(this.Clear);
+            this.button3.Click += new System.EventHandler(this.Clear);
             // 
             // btnClose
             // 

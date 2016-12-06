@@ -12,6 +12,10 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+
+        #region  ****properties****
+        bool dottIsUsed = false;
+        #endregion
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +27,21 @@ namespace Calculator
 
         private void Number(object sender, EventArgs e)
         {
-            
+            var btn = sender as Button;
+            if (btn != null)
+            {
+                if (dottIsUsed == false)
+                {
+                    if (btn.Text == ".")
+                        dottIsUsed = true;
+                    txtResult.Text += btn.Text;
+                }
+                else
+                    if (btn.Text != ".")
+                    txtResult.Text += btn.Text;
+
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -40,6 +58,7 @@ namespace Calculator
         private void Clear(object sender, EventArgs e)
         {
             txtResult.Text = string.Empty;
+            dottIsUsed = false;
         }
     }
 }

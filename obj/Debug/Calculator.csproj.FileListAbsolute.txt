@@ -7,3 +7,12 @@ c:\users\chizari\documents\visual studio 2015\Projects\Calculator\Calculator\obj
 c:\users\chizari\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.exe
 c:\users\chizari\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.pdb
 c:\users\chizari\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Behzad Chizari\Documents\GitHub\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache

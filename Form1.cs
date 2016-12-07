@@ -15,6 +15,7 @@ namespace Calculator
 
         #region  ****properties****
         bool dottIsUsed = false;
+        Calc calc = new Calc();
         #endregion
         public Form1()
         {
@@ -23,6 +24,81 @@ namespace Calculator
 
         private void Operation(object sender, EventArgs e)
         {
+            var btn = sender as Button;
+            if (btn != null)
+            {
+                if (calc.First == null && calc.Second == null)
+                {
+                    if (txtResult.Text != string.Empty)
+                    {
+                        calc.First = Convert.ToDouble(txtResult.Text);
+                        calc.Operation = btn.Text;
+                        lblResult.Text = calc.First.ToString() + " " + calc.Operation;
+                        txtResult.Text = string.Empty;
+
+                    }
+                }
+                if (calc.First != null && calc.Second == null)
+                {
+                    if (txtResult.Text != string.Empty)
+                    {
+                        calc.Second = Convert.ToDouble(txtResult.Text);
+                        if (btn.Text == "=")
+                        {
+                            calc.Operate();
+                            lblResult.Text = calc.First.ToString() + " " + calc.Operation + " " + calc.Second.ToString();
+                            txtResult.Text = calc.Result.ToString();
+                            calc.First = calc.Result;
+                            calc.Second = null;
+                        }
+                        else
+                        {
+                            if (calc.Result!= null)
+                            {
+                                lblResult.Text = calc.Result.ToString();
+                            }
+                            calc.Operate();
+                            calc.Operation = btn.Text;
+                            lblResult.Text = calc.Result.ToString() + " " + calc.Operation ;
+                            txtResult.Text = string.Empty;
+                            calc.First = calc.Result;
+                            calc.Second = null;
+
+
+
+
+
+
+
+
+
+                            //calc.First = calc.Result;
+                            //calc.Second = null;
+                            //calc.Operation = btn.Text;
+                            //lblResult.Text += " " + calc.First;
+                            //txtResult.Text = string.Empty;
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
         private void Number(object sender, EventArgs e)
         {
@@ -59,12 +135,14 @@ namespace Calculator
                 var sym = (Convert.ToDouble(txtResult.Text) * (-1));
                 txtResult.Text = sym.ToString();
             }
-            
+
         }
         private void Clear(object sender, EventArgs e)
         {
             txtResult.Text = string.Empty;
             dottIsUsed = false;
+            calc = new Calc();
+            lblResult.Text = string.Empty;
         }
         private void Back(object sender, EventArgs e)
         {
@@ -79,6 +157,7 @@ namespace Calculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txtResult.Text = string.Empty;
         }
     }
 }

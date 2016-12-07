@@ -51,6 +51,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtResult
@@ -398,6 +399,16 @@
             this.button4.BindingContextChanged += new System.EventHandler(this.Clear);
             this.button4.Click += new System.EventHandler(this.Back);
             // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Digiface", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblResult.Location = new System.Drawing.Point(12, 26);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 16);
+            this.lblResult.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,6 +418,7 @@
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(444, 408);
             this.ControlBox = false;
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnNum9);
             this.Controls.Add(this.btnNum6);
             this.Controls.Add(this.btnNum7);
@@ -469,6 +481,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblResult;
     }
 }
 

@@ -50,55 +50,26 @@ namespace Calculator
                             txtResult.Text = calc.Result.ToString();
                             calc.First = calc.Result;
                             calc.Second = null;
+                            calc.Operation = null;
                         }
                         else
                         {
-                            if (calc.Result!= null)
-                            {
-                                lblResult.Text = calc.Result.ToString();
-                            }
                             calc.Operate();
                             calc.Operation = btn.Text;
-                            lblResult.Text = calc.Result.ToString() + " " + calc.Operation ;
+                            lblResult.Text = calc.Result.ToString() + " " + calc.Operation;
                             txtResult.Text = string.Empty;
                             calc.First = calc.Result;
                             calc.Second = null;
-
-
-
-
-
-
-
-
-
-                            //calc.First = calc.Result;
-                            //calc.Second = null;
-                            //calc.Operation = btn.Text;
-                            //lblResult.Text += " " + calc.First;
-                            //txtResult.Text = string.Empty;
+                            calc.Operation = btn.Text;
                         }
+                    }
+                    else if (calc.First != null && calc.Operation != null && calc.Second == null && calc.Operation != btn.Text)
+                    {
+                        calc.Operation = btn.Text;
+                        lblResult.Text = lblResult.Text.Remove(lblResult.Text.Length - 1, 1) + calc.Operation;
                     }
                 }
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
         private void Number(object sender, EventArgs e)
         {
@@ -107,7 +78,7 @@ namespace Calculator
             {
                 if (txtResult.Text == string.Empty || string.IsNullOrWhiteSpace(txtResult.Text))
                 {
-                    if (btn.Text == "/")
+                    if (btn.Text == ".")
                     {
                         txtResult.Text = "0";
                     }
@@ -133,6 +104,8 @@ namespace Calculator
             if (!string.IsNullOrEmpty(txtResult.Text))
             {
                 var sym = (Convert.ToDouble(txtResult.Text) * (-1));
+                if (calc.First != null)
+                    calc.First = calc.First * -1;
                 txtResult.Text = sym.ToString();
             }
 
@@ -141,23 +114,40 @@ namespace Calculator
         {
             txtResult.Text = string.Empty;
             dottIsUsed = false;
+            var hisTemp = calc.History;
             calc = new Calc();
+            calc.History = hisTemp;
             lblResult.Text = string.Empty;
         }
         private void Back(object sender, EventArgs e)
         {
-            var lastChar = txtResult.Text.Substring(txtResult.Text.Length - 1, 1);
             if (txtResult.Text != string.Empty)
             {
+                var lastChar = txtResult.Text.Substring(txtResult.Text.Length - 1, 1);
                 if (lastChar == "/")
                     dottIsUsed = false;
                 txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1, 1);
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             txtResult.Text = string.Empty;
+        }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void History(object sender, EventArgs e)
+        {
+            var hisForm = new History();
+            foreach (var item in calc.History)
+            {
+                hisForm.HistoryLog += item;
+            }
+            hisForm.Show();
+
         }
     }
 }

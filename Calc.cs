@@ -12,19 +12,20 @@ namespace Calculator
         public double? Second { get; set; }
         public double? Result { get; set; }
         public string Operation { get; set; }
-        public List<string> History { get;  }
+        public List<string> History { get; set; }
         public Calc()
         {
             First = null;
             Second = null;
             Result = null;
             Operation = null;
+            History = new List<string>();
         }
         private void AddHistory()
         {
             if (First != null && Second != null && Result != null && Operation != null)
             {
-                var his = First.ToString() + " "  + Operation + " "  + Second.ToString() + " = " + Result.ToString() + "\n";
+                var his = "(" + First.ToString() + ")" + " " + Operation + " " + "(" + Second.ToString() + ")" + " = " + Result.ToString() + "\n";
                 History.Add(his);
             }
         }
@@ -47,7 +48,7 @@ namespace Calculator
                 default:
                     break;
             }
-            //AddHistory();
+            AddHistory();
         }
 
     }

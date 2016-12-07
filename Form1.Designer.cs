@@ -52,6 +52,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtResult
@@ -59,7 +60,7 @@
             this.txtResult.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResult.Enabled = false;
-            this.txtResult.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResult.Font = new System.Drawing.Font("Digiface", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.Location = new System.Drawing.Point(12, 42);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
@@ -364,7 +365,6 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "C";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.BindingContextChanged += new System.EventHandler(this.Clear);
             this.button3.Click += new System.EventHandler(this.Clear);
             // 
             // btnClose
@@ -396,7 +396,6 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "←";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.BindingContextChanged += new System.EventHandler(this.Clear);
             this.button4.Click += new System.EventHandler(this.Back);
             // 
             // lblResult
@@ -408,6 +407,22 @@
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(0, 16);
             this.lblResult.TabIndex = 2;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Californian FB", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Location = new System.Drawing.Point(68, 346);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 50);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "His";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.History);
             // 
             // Form1
             // 
@@ -432,6 +447,7 @@
             this.Controls.Add(this.btnDivide);
             this.Controls.Add(this.btnProduct);
             this.Controls.Add(this.btnMinus);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -482,6 +498,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button button5;
     }
 }
 

@@ -146,7 +146,7 @@ namespace Calculator
             {
                 hisForm.HistoryLog += item;
             }
-            hisForm.Show();
+                hisForm.Show();
 
         }
     }

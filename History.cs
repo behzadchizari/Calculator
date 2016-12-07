@@ -19,7 +19,13 @@ namespace Calculator
         public string HistoryLog { get; set; }
         private void History_Load(object sender, EventArgs e)
         {
-            lblHistory.Text = HistoryLog;
+            if (HistoryLog != null)
+                lblHistory.Text = HistoryLog;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
